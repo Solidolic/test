@@ -1,11 +1,16 @@
-import React from 'react';
+import React from 'react'
 
-export default class Admin extends React.Component {
+export default class Admin extends React.Component{
     render(){
-        return (
-            <div className='row'>
-                <div className='col-md-12'>Раздел /admin</div>
-            </div>
+        return(
+            <div>Раздел /Админ</div>
         )
+    }
+
+    static onEnter(nextState, replace) {
+        const login = window.localStorage.getItem('rr_login')
+        if (login !== 'admin') {
+            replace('/');
+        }
     }
 }

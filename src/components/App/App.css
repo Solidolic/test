@@ -8,3 +8,7 @@
   background-color: red;
   height: 25px;
 }
+
+.active {
+    font-weight: bold;
+}
