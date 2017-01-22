@@ -103,9 +103,9 @@ export default class NotesApp extends React.Component {
                         arr.push(item);
                     }
                 }
-                if (!showInProgress && !showDone && !showNew) return
+                if (!showInProgress && !showDone && !showNew) return false;
             }
-        }.bind(this))
+        }.bind(this));
 
         if (!arr.length){
             return this.state.notes
@@ -117,13 +117,9 @@ export default class NotesApp extends React.Component {
         this.state.notes.forEach(function (item) {
             debugger
             if (item.id == elem.id){
-                if(item.done){
-                    item.done = false;
-                } else {
-                    item.done = true;
-                }
+                item.done = !item.done;
             }
-        })
+        });
         this.setState({notes: this.state.notes});
         console.log(this.state.notes);
     }
@@ -131,9 +127,9 @@ export default class NotesApp extends React.Component {
     render() {
         return  this.state.notes.length ? (
             <div className="notes-app">
-                <TaskMenu onTaskAdd={this.addTaskHandler}/>
-                <Selection onChangeBox={this.changeStateFilter}/>
-                <TaskList notes={this.showFilteredNotes()} onTaskDelete={this.taskDeleteHandler} onChangeState={this.onChangeStateHandler}/>
+                {/*<TaskMenu onTaskAdd={this.addTaskHandler}/>*/}
+                {/*<Selection onChangeBox={this.changeStateFilter}/>*/}
+                {/*<TaskList notes={this.showFilteredNotes()} onTaskDelete={this.taskDeleteHandler} onChangeState={this.onChangeStateHandler}/>*/}
             </div>
         ) : null
     }

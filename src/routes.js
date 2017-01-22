@@ -8,7 +8,7 @@ import Home from './components/home/home';
 import NotFound from './components/notFound/notFound';
 import Genre from './components/genre/genre';
 import Login from './components/login/login';
-import ToDo from './components/releases/taskList/main';
+import ToDo from './components/releases/taskList/components/notesApp/notesApp';
 
 export const routes = (
     <div>
@@ -24,7 +24,7 @@ export const routes = (
         <Route path='*' component={NotFound} />
         
     </div>
-)
+);
 
 
 
