@@ -7,14 +7,17 @@ import List from './components/list/list';
 import Home from './components/home/home';
 import NotFound from './components/notFound/notFound';
 import Genre from './components/genre/genre';
-import Login from './components/login/login'
+import Login from './components/login/login';
+import ToDo from './components/releases/taskList/main';
 
 export const routes = (
     <div>
         <Route path='/' component={App}>
             <IndexRoute component={Home} />
             <Route path='/admin' component={Admin} onEnter={Admin.onEnter}/>
-            <Route path='/genre/:genre' component={Genre} />
+            <Route path='/genre' component={Genre}>
+                <Route path='/genre/:release' component={ToDo} />
+            </Route>
             <Route path='/list' component={List}/>
             <Route path='/login' component={Login}/>
         </Route>

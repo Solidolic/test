@@ -7,14 +7,14 @@ export default class List extends React.Component{
             <div>
                 <div className='row'>
                     <div className='col-md-12'>
-                        <h3> Список жанров </h3>
+                        <h3> Список тестовых </h3>
                     </div>
                 </div>
                 <div className='row'>
                     <div className='col-md-12'>
                         <ul className='list'>
                             <li className='list__item'>
-                                <Link to='/genre/house/'>House</Link>
+                                <Link to='/genre/taskList/'>TaskList</Link>
                             </li>
                             <li className='list__item'>
                                 <Link to='/genre/dnb/'>Drum and bass</Link>
