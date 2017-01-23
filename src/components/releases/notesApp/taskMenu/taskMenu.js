@@ -12,11 +12,11 @@ export default class TaskMenu extends React.Component {
         };
     }
 
-    onChangeHandler(event) {
+    onChangeHandler = (event) => {
         this.setState({text: event.target.value});
     }
 
-    addTaskHandler() {
+    addTaskHandler = () => {
         var newTask = {
             task: this.state.text,
             color: 'yellow',
@@ -31,7 +31,7 @@ export default class TaskMenu extends React.Component {
         }
     }
 
-    isChanged() {
+    isChanged = () => {
         this.state.done ? this.setState({done: 0}) : this.setState({done: 1});
     }
     

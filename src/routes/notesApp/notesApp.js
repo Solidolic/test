@@ -7,7 +7,6 @@ import './notesApp.css'
 export default class NotesApp extends React.Component {
 	constructor(props){
 		super(props);
-
 		this.state = {
 			notes: [],
 			filteredNotes: [],
@@ -46,7 +45,7 @@ export default class NotesApp extends React.Component {
 		xhr.send();
 	}
 
-	taskDeleteHandler(task) {
+	taskDeleteHandler = (task) => {
 		var taskId = task.id;
 		var newTasks = this.state.notes.filter(function(note) {
 			return note.id !== taskId;
@@ -55,13 +54,13 @@ export default class NotesApp extends React.Component {
 	}
 
 
-	addTaskHandler(newTask) {
+	addTaskHandler = (newTask) => {
 		var newList = this.state.notes.slice();
 		newList.unshift(newTask);
 		this.setState({notes: newList});
 	}
 
-	changeStateFilter(itemsState) {
+	changeStateFilter = (itemsState) => {
 		this.setState({filterConfig: Object.assign(this.state.stateFilter, itemsState)});
 	}
 
@@ -119,7 +118,7 @@ export default class NotesApp extends React.Component {
 		return arr
 	}
 
-	onChangeStateHandler(elem) {
+	onChangeStateHandler = (elem) => {
 		this.state.notes.forEach(function (item) {
 			if (item.id == elem.id){
 				item.done = !item.done;
@@ -131,7 +130,7 @@ export default class NotesApp extends React.Component {
 
 	render() {
 		return  (
-            <div className="notes-app">
+            <div className='notes-app'>
 					<TaskMenu onTaskAdd={this.addTaskHandler}/>
 					<Selection onChangeBox={this.changeStateFilter}/>
 					<TaskList notes={this.showFilteredNotes()} onTaskDelete={this.taskDeleteHandler} onChangeState={this.onChangeStateHandler}/>

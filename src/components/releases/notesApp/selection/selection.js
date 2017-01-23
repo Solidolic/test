@@ -2,7 +2,7 @@ import React from 'react'
 
 
 export default class Selection extends React.Component{
-    onChange(e) {
+    onChange = (e) => {
         this.props.onChangeBox({
             [e.target.getAttribute('data-type')]: e.target.checked
         });

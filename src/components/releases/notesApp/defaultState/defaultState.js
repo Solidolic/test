@@ -10,8 +10,8 @@ export default class DefaultState extends React.Component{
         }
     }
 
-    isChanged() {
-        this.state.state  ? this.setState({state: 0, color: '#d0712e'}) : this.setState({state: 1, color: '#44c767'});
+    isChanged = () => {
+        this.state.state ? this.setState({state: 0, color: '#d0712e'}) : this.setState({state: 1, color: '#44c767'});
         this.props.onChangElemState();
     }
     
