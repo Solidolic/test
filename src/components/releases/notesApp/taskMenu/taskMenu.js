@@ -1,11 +1,13 @@
 import React from 'react'
+import AddTaskButton from '../addTaskBut/addTaskBut'
 
 export default class TaskMenu extends React.Component {
-    getInitialState() {
+    constructor(props) {
+        super(props);
         return {
             text: '',
             done: 1
-        }
+        };
     }
 
     onChangeHandler(event) {
@@ -19,7 +21,7 @@ export default class TaskMenu extends React.Component {
             id: Math.random(),
             state: true,
             done: this.state.done,
-        }
+        };
 
         if (this.state.text){
             this.props.onTaskAdd(newTask);

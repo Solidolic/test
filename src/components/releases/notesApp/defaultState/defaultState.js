@@ -1,8 +1,8 @@
 import React from 'react'
 
 export default class DefaultState extends React.Component{
-
-    getInitialState() {
+    constructor(props) {
+        super(props)
         return {
             state: this.props.isSelected,
             color: this.props.color
