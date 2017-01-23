@@ -1,5 +1,7 @@
 import React from 'react'
 import Task from '../task/task'
+import Masonry from 'masonry-layout'
+
 
 export default class TaskList extends React.Component{
     componentDidMount() {
@@ -20,7 +22,6 @@ export default class TaskList extends React.Component{
     }
 
     render() {
-        debugger;
         var onTaskDelete = this.props.onTaskDelete,
             onChangeState = this.props.onChangeState;
         return (

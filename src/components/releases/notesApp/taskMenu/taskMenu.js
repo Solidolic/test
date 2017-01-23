@@ -1,10 +1,12 @@
 import React from 'react'
 import AddTaskButton from '../addTaskBut/addTaskBut'
 
+
 export default class TaskMenu extends React.Component {
     constructor(props) {
         super(props);
-        return {
+        
+        this.state = {
             text: '',
             done: 1
         };

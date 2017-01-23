@@ -2,6 +2,7 @@ import React from 'react'
 import TaskMenu from '../../components/releases/notesApp/taskMenu/taskMenu'
 import Selection from '../../components/releases/notesApp/selection/selection'
 import TaskList from '../../components/releases/notesApp/taskList/taskList'
+import './notesApp.css'
 
 export default class NotesApp extends React.Component {
 	constructor(props){
@@ -129,11 +130,13 @@ export default class NotesApp extends React.Component {
 	}
 
 	render() {
-		return  <div className="notes-app">
-					/*<TaskMenu onTaskAdd={this.addTaskHandler}/>
-					<Selection onChangeBox={this.changeStateFilter}/>*/
+		return  (
+            <div className="notes-app">
+					<TaskMenu onTaskAdd={this.addTaskHandler}/>
+					<Selection onChangeBox={this.changeStateFilter}/>
 					<TaskList notes={this.showFilteredNotes()} onTaskDelete={this.taskDeleteHandler} onChangeState={this.onChangeStateHandler}/>
-				</div>
+			</div>
+        )
 
 	}
 }

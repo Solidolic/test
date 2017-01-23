@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 export default class Selection extends React.Component{
     onChange(e) {
         this.props.onChangeBox({
