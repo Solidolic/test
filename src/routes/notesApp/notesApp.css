@@ -4,7 +4,7 @@ body {
     background-color: #eaeaea;
 }
 
-.selection-task {
+.selectionTask {
     display: flex;
     justify-content: flex-end;
     padding-left: 240px;
@@ -13,7 +13,7 @@ body {
     padding-bottom: 50px;
 }
 
-.task-list {
+.taskList {
     margin: 0 auto;
 }
 
@@ -38,7 +38,7 @@ body {
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
-.task-menu {
+.taskMenu {
     width: 100%;
     max-width: 600px;
     padding: 16px;
@@ -58,7 +58,7 @@ body {
     align-items: flex-end;
 }
 
-.notes-app {
+.notesApp {
     max-width: 960px;
     width: 100%;
     display: flex;
@@ -67,7 +67,7 @@ body {
     margin: 0 auto;
 }
 
-.add-task-button {
+.addTaskButton {
     -webkit-align-self: flex-end;
     -ms-flex-item-align: end;
     align-self: flex-end;
@@ -84,20 +84,20 @@ body {
     text-shadow:0px 1px 0px #2f6627;
 }
 
-.add-task-button:hover {
+.addTaskButton:hover {
     background-color:#5cbf2a;
 }
 
-.add-task-button:active {
+.addTaskButton:active {
     position:relative;
     top:1px;
 }
 
-.add-task-button:focus {
+.addTaskButton:focus {
     outline: 0;
 }
 
-.delete-task {
+.deleteTask {
     position: absolute;
     display: none;
     color: rgba(0,0,0,0.6);
@@ -106,7 +106,7 @@ body {
     margin-top: -54px;
 }
 
-.task:hover .delete-task {
+.task:hover .deleteTask {
     display: block;
 }
 

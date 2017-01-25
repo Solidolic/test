@@ -1,5 +1,6 @@
 import React from 'react'
 import AddTaskButton from '../addTaskBut/addTaskBut'
+import Style from '../../../../routes/notesApp/notesApp.css'
 
 
 export default class TaskMenu extends React.Component {
@@ -37,8 +38,8 @@ export default class TaskMenu extends React.Component {
     
     render() {
         return (
-            <div className="task-menu">
-                <textarea  row={1} className="textarea" placeholder="Enter your task here..."  value={this.state.text} onChange={this.onChangeHandler}/>
+            <div className={Style.taskMenu}>
+                <textarea  row={1} className={Style.textarea} placeholder="Enter your task here..."  value={this.state.text} onChange={this.onChangeHandler}/>
                 <div>
                     <select value={this.state.state} isSelected={this.props.done} onChange={this.isChanged}>
                         <option value="1">done</option>

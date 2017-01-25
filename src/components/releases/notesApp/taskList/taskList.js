@@ -1,6 +1,7 @@
 import React from 'react'
 import Task from '../task/task'
 import Masonry from 'masonry-layout'
+import Style from '../../../../routes/notesApp/notesApp.css'
 
 
 export default class TaskList extends React.Component{
@@ -25,7 +26,7 @@ export default class TaskList extends React.Component{
         var onTaskDelete = this.props.onTaskDelete,
             onChangeState = this.props.onChangeState;
         return (
-            <div className="task-list" ref="grid">
+            <div className={Style.taskList} ref="grid">
                 {
                     this.props.notes.map(function (note) {
                         return (
