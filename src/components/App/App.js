@@ -1,7 +1,7 @@
-import React from 'react'
-import { Link } from 'react-router'
-import getMuiTheme from 'material-ui/styles/getMuiTheme'
-import Style from './App.css'
+import React from 'react';
+import { Link } from 'react-router';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import Style from './App.css';
 import RaisedButton from 'material-ui/RaisedButton';
 import baseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import AppBar from 'material-ui/AppBar';
@@ -26,7 +26,7 @@ export default class App extends React.Component {
             <div>
                 <AppBar>
                     <IconMenu
-                        iconButtonElement={<IconButton><MoreVertIcon style={{marginRight: '-80px'}}/></IconButton>}
+                        iconButtonElement={<IconButton><MoreVertIcon color="red"/></IconButton>}
                         anchorOrigin={{horizontal: 'left', vertical: 'top'}}
                         targetOrigin={{horizontal: 'left', vertical: 'top'}}
                     >
