@@ -26,7 +26,7 @@ export default class App extends React.Component {
             <div>
                 <AppBar>
                     <IconMenu
-                        iconButtonElement={<IconButton><MoreVertIcon color="red"/></IconButton>}
+                        iconButtonElement={<IconButton style={{width: '100px', height:'100px'}}><MoreVertIcon color="red"/></IconButton>}
                         anchorOrigin={{horizontal: 'left', vertical: 'top'}}
                         targetOrigin={{horizontal: 'left', vertical: 'top'}}
                     >
