@@ -22,15 +22,9 @@ export default class MenuBar extends React.Component{
         return { muiTheme: getMuiTheme(baseTheme) };
     };
 
-    iconMenuClickButtonHandler = () => {
+	toggleMenu() {
         this.setState({
-            open: true
-        });
-    };
-
-    onRequestChangeHandler = () => {
-        this.setState({
-            open: false
+			open: !this.state.open
         });        
     };
     
@@ -39,20 +33,23 @@ export default class MenuBar extends React.Component{
     }
     
     render(){
+        let menu = <IconMenu
+            iconButtonElement={<IconButton><MoreVertIcon color="white"/></IconButton>}
+            open={this.state.open}
+            onRequestChange={::this.toggleMenu}
+            anchorOrigin={{horizontal: 'right', vertical: 'top'}}
+            targetOrigin={{horizontal: 'right', vertical: 'top'}}
+        >
+            <MenuItem primaryText="Main" value="1" containerElement={<Link to="/" />} />
+            <MenuItem primaryText="Tasks" value="2" containerElement={<Link to="/list" />} />
+            <MenuItem primaryText="Sign in" value="3" containerElement={<Link to="/login" />} />
+        </IconMenu>;
+
         return (
-            <AppBar title="No name application">
-                <IconMenu
-                    iconButtonElement={<IconButton style={iconsStyle} onClick={this.iconMenuClickButtonHandler}><MoreVertIcon color="white"/></IconButton>}
-                    open={this.state.open}
-                    onRequestChange={this.onRequestChangeHandler}
-                    anchorOrigin={{horizontal: 'right', vertical: 'top'}}
-                    targetOrigin={{horizontal: 'right', vertical: 'top'}}
-                    >
-                    <MenuItem primaryText="Main" value="1" containerElement={<Link to="/" />} /> 
-                    <MenuItem primaryText="Tasks" value="2" containerElement={<Link to="/list" />} />
-                    <MenuItem primaryText="Sign in" value="3" containerElement={<Link to="/login" />} />
-                </IconMenu>
-            </AppBar>
+            <AppBar
+                title="No name application"
+                iconElementRight={menu}
+            />
         )
     }
 }
