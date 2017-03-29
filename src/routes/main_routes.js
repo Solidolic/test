@@ -8,7 +8,6 @@ import Home from '../components/home/home';
 import NotFound from '../components/notFound/notFound';
 import Genre from '../components/genre/genre';
 import Login from '../components/login/login';
-import NotesApp from './notesApp/notesApp';
 
 export const routes = (
     <div>
@@ -16,9 +15,9 @@ export const routes = (
             <IndexRoute component={Home} />
             <Route path='/admin' component={Admin} onEnter={Admin.onEnter}/>
             <Route path='/genre' component={Genre}>
-                <Route path='/genre/:release' component={NotesApp} />
+                <Route path='/genre/:release' />
             </Route>
-            <Route path='/list' component={List}/>
+            <Route path='/list' component={List} />
             <Route path='/login' component={Login}/>
         </Route>
         <Route path='*' component={NotFound} />

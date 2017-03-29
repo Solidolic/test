@@ -1,0 +1,28 @@
+.nodes {
+    display: flex;
+    justify-content: center;
+}
+
+.element {
+    background: white;
+    width: 40%;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 18px 1px darkgrey;
+    margin-top: 4%;
+    display: flex;
+}
+
+.addTaskButton {
+    margin-top: 2%;
+    margin-left: 20%;
+    position: absolute;
+}
+
+.checkBoxStyle {
+    width: 0;
+}
+
+.titleStyle {
+    line-height: 24px;
+}

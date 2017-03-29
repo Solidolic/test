@@ -5,7 +5,7 @@ import Style from '../../../../routes/notesApp/notesApp.css'
 export default class Selection extends React.Component{
     onChange = (e) => {
         this.props.onChangeBox({
-            [e.target.getAttribute('data-type')]: e.target.checked
+            [e.target.getAttribute('api-type')]: e.target.checked
         });
     }
 

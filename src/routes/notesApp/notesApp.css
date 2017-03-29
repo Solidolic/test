@@ -103,7 +103,7 @@ body {
     color: rgba(0,0,0,0.6);
     cursor: pointer;
     padding-left: 185px;
-    margin-top: -54px;
+    margin-top: -90px;
 }
 
 .task:hover .deleteTask {

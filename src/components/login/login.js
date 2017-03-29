@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
-import RaisedButton from 'material-ui/RaisedButton';
 import baseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import TextField from 'material-ui/TextField';
@@ -31,12 +30,11 @@ export default class Login extends React.Component {
                 label="Submit"
                 primary={true}
                 disabled={true}
-            />,
+            />
         ];
         
         return (
             <div>
-                
                 <Dialog
                     title="Login/Password"
                     actions={actions}
@@ -55,13 +53,7 @@ export default class Login extends React.Component {
                     />
                 </Dialog>
             </div>
-            // <div className='row'>
-            //     <div className='col-md-12'>Пожалуйста, введите логин:</div>
-            //     <form className='col-md-4' onSubmit={this.handleSubmit}>
-            //         <input type='text' placeholder='login'/>
-            //         <button type='submit'>Войти</button>
-            //     </form>
-            // </div>
+            
         )
     }
 }

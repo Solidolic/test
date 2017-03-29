@@ -7,15 +7,19 @@ import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import baseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import {Link} from 'react-router'
-import Menu from 'material-ui/Menu';
+import Navigation from 'material-ui/svg-icons/navigation/menu';
+import AppDrawer from '../drawer/drawer'
+
 
 export default class MenuBar extends React.Component{
     constructor(props){
         super(props)
         
         this.state = {
-            open: false
+            appBarOpen: false,
+            drawerOpen: false
         };
+        
     };
 
     getChildContext() {
@@ -24,18 +28,20 @@ export default class MenuBar extends React.Component{
 
 	toggleMenu() {
         this.setState({
-			open: !this.state.open
+            appBarOpen: !this.state.appBarOpen
         });        
     };
-    
-    test = () => {
-        console.log('hi')
+
+    setDrawerState () {
+        this.setState({
+            drawerOpen: !this.state.drawerOpen
+        });
     }
-    
+
     render(){
         let menu = <IconMenu
             iconButtonElement={<IconButton><MoreVertIcon color="white"/></IconButton>}
-            open={this.state.open}
+            open={this.state.appBarOpen}
             onRequestChange={::this.toggleMenu}
             anchorOrigin={{horizontal: 'right', vertical: 'top'}}
             targetOrigin={{horizontal: 'right', vertical: 'top'}}
@@ -44,23 +50,22 @@ export default class MenuBar extends React.Component{
             <MenuItem primaryText="Tasks" value="2" containerElement={<Link to="/list" />} />
             <MenuItem primaryText="Sign in" value="3" containerElement={<Link to="/login" />} />
         </IconMenu>;
-
         return (
-            <AppBar
-                title="No name application"
-                iconElementRight={menu}
-            />
+            <div>
+                <AppBar
+                    title="No name application"
+                    iconElementLeft={<IconButton><Navigation /></IconButton>}
+                    onLeftIconButtonTouchTap={::this.setDrawerState}
+                    iconElementRight={menu}
+                />
+                <AppDrawer open={this.state.drawerOpen} />
+            </div>
         )
     }
 }
 
 MenuBar.childContextTypes = {
-    muiTheme: React.PropTypes.object.isRequired,
-};
-
-
-const iconsStyle = {
-    marginTop: '8px'
+    muiTheme: React.PropTypes.object.isRequired
 };
 
 
